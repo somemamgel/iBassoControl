@@ -1,0 +1,22 @@
+# HTTP upstream; TLS is terminated by the external reverse proxy.
+[general]
+host = "0.0.0.0"
+port = 8080
+root = "/public"
+log-level = "info"
+directory-listing = false
+health = true
+compression = true
+cache-control-headers = false
+security-headers = false
+
+# Revalidate resources on deployment; allow browser-side WASM compilation.
+[[advanced.headers]]
+source = "**"
+[advanced.headers.headers]
+Cache-Control = "no-cache"
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "hid=(self)"
+Content-Security-Policy = "frame-ancestors 'none'; object-src 'none'; base-uri 'self'"

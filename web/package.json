@@ -1,0 +1,26 @@
+{
+    "name": "ibasso-webhid",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev": "pnpm wasm:build && vite --host 127.0.0.1",
+        "build": "pnpm wasm:build && tsc --noEmit && vite build",
+        "preview": "vite preview --host 127.0.0.1",
+        "test": "pnpm wasm:build && vitest run",
+        "wasm:build": "node scripts/build-wasm.mjs"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.3",
+        "@types/node": "^26.6.5",
+        "@types/w3c-web-hid": "^1.0.7",
+        "happy-dom": "^21.0.3",
+        "tailwindcss": "^4.3.3",
+        "typescript": "^7.0.2",
+        "vite": "^8.3.4",
+        "vitest": "^5.0.5"
+    },
+    "dependencies": {
+        "i18next": "^26.4.7"
+    }
+}

@@ -1,0 +1,8 @@
+[package]
+name = "ibasso-hid"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ibasso-protocol.workspace = true
+hidapi = "2.6.7"
